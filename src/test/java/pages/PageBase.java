@@ -11,6 +11,7 @@ import java.util.Random;
 public abstract class PageBase {
     protected WebDriver driver;
 
+
     public PageBase(WebDriver driver){
         this.driver = driver;
     }
@@ -21,11 +22,7 @@ public abstract class PageBase {
         }
     }
 
-    public void inputText(WebElement element, String text){
-        element.click();
-        element.clear();
-        element.sendKeys(text);
-    }
+
 
 
     public void selectInDropDownByValue(WebElement element, String value){

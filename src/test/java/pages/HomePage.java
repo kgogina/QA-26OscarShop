@@ -1,6 +1,7 @@
 package pages;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,17 @@ public class HomePage extends PageBase{
     @FindBy (className = "thumbnail")
     WebElement clickOnProductPhoto;
 
+    @FindBy (className = "btn-lg")
+    WebElement clickProceedToCheckout;
+
+    @FindBy (className = "form-0-quantity")
+    WebElement clickChangeAmountOfItem;
+
+
+    @FindBy (className = "btn btn-default")
+    WebElement clickUpdate;
+
+
     public void selectCategory() {
         submenuBooks.click();
     }
@@ -34,9 +46,9 @@ public class HomePage extends PageBase{
         productList.get(0).click();
     }
 
-    public void clickAddtoBasket() {
+    public void clickAddToBasket() {
         addToBasket.click();
-        
+
     }
 
     public void clickViewBasket() {
@@ -45,5 +57,23 @@ public class HomePage extends PageBase{
 
     public void clickNameOfTheProduct() {
         clickOnProductPhoto.click();
+    }
+
+    public void ChangeAmountOfItem() {
+        clickChangeAmountOfItem.click();
+    }
+
+    public void clickUpdate() {
+        clickUpdate.click();
+    }
+
+    public void clickProceedToCheckout() {
+        clickProceedToCheckout.click();
+    }
+
+    public void inputText(String text){
+        clickChangeAmountOfItem.click();
+        clickChangeAmountOfItem.clear();
+        clickChangeAmountOfItem.sendKeys(text);
     }
 }
